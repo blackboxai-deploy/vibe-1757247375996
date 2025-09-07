@@ -1,0 +1,99 @@
+/* ClicDesign Custom Theme */
+:root {
+  /* ClicDesign Brand Colors */
+  --navy: #0B0B1D;
+  --cream: #F8F5F0;
+  --electric-green: #47F273;
+  
+  /* Additional UI Colors */
+  --navy-light: #1A1A2E;
+  --navy-dark: #050509;
+  --green-light: #6BF591;
+  --green-dark: #2FD455;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--electric-green) 0%, var(--green-light) 100%);
+}
+
+/* Custom Tailwind utilities */
+@layer utilities {
+  .bg-navy { background-color: var(--navy); }
+  .bg-cream { background-color: var(--cream); }
+  .bg-electric-green { background-color: var(--electric-green); }
+  .bg-navy-light { background-color: var(--navy-light); }
+  .bg-navy-dark { background-color: var(--navy-dark); }
+  .bg-green-light { background-color: var(--green-light); }
+  .bg-green-dark { background-color: var(--green-dark); }
+  
+  .text-navy { color: var(--navy); }
+  .text-cream { color: var(--cream); }
+  .text-electric-green { color: var(--electric-green); }
+  .text-navy-light { color: var(--navy-light); }
+  .text-green-light { color: var(--green-light); }
+  
+  .border-navy { border-color: var(--navy); }
+  .border-cream { border-color: var(--cream); }
+  .border-electric-green { border-color: var(--electric-green); }
+  
+  .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-accent { background: var(--gradient-accent); }
+}
+
+/* Custom animations */
+@keyframes pulse-scale {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-4px); 
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 0.6s ease-in-out;
+}
+
+/* Hover effects for CTAs */
+.cta-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(71, 242, 115, 0.3);
+}
+
+.cta-secondary:hover {
+  background-color: var(--navy);
+  color: var(--cream);
+  border-color: var(--navy);
+}
+
+/* Custom spacing rhythm (8px base) */
+.spacing-xs { margin: 0.5rem; } /* 8px */
+.spacing-sm { margin: 1rem; } /* 16px */
+.spacing-md { margin: 1.5rem; } /* 24px */
+.spacing-lg { margin: 2rem; } /* 32px */
+.spacing-xl { margin: 3rem; } /* 48px */
+.spacing-2xl { margin: 4rem; } /* 64px */
+
+.padding-xs { padding: 0.5rem; }
+.padding-sm { padding: 1rem; }
+.padding-md { padding: 1.5rem; }
+.padding-lg { padding: 2rem; }
+.padding-xl { padding: 3rem; }
+.padding-2xl { padding: 4rem; }
